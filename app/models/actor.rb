@@ -11,4 +11,8 @@
 #  updated_at :datetime         not null
 #
 class Actor < ApplicationRecord
+  def characters
+    characters =Character.where(:actor_id=>self.id).order({ :year => :asc })
+    return characters
+  end
 end
